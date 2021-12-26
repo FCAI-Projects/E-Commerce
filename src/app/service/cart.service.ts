@@ -22,7 +22,7 @@ export class CartService {
 
   addtoCart(data: object) {
     return this.http
-      .post<any>('http://api.goomlla.com:3006/cart', data, {
+      .post<any>('http://localhost:3006/cart', data, {
         headers: this.headers,
       })
       .subscribe();
@@ -30,7 +30,7 @@ export class CartService {
 
   getCartItems() {
     return this.http
-      .get<any>('http://api.goomlla.com:3006/cart', {
+      .get<any>('http://localhost:3006/cart', {
         headers: this.headers,
       })
       .pipe(

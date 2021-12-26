@@ -22,17 +22,15 @@ export class ApiService {
   }
 
   getProduct() {
-    return this.http
-      .get<any>('http://api.goomlla.com:3006/product?page=1')
-      .pipe(
-        map((res: any) => {
-          return res;
-        })
-      );
+    return this.http.get<any>('http://localhost:3006/product?page=1').pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
   }
 
   getProductById(id: string) {
-    return this.http.get<any>('http://api.goomlla.com:3006/product/' + id).pipe(
+    return this.http.get<any>('http://localhost:3006/product/' + id).pipe(
       map((res: any) => {
         return res;
       })
@@ -40,17 +38,15 @@ export class ApiService {
   }
 
   loginUser(user: Object) {
-    return this.http
-      .post<any>('http://api.goomlla.com:3006/user/login', user)
-      .pipe(
-        map((res: any) => {
-          return res;
-        })
-      );
+    return this.http.post<any>('http://localhost:3006/user/login', user).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
   }
 
   registerUser(user: Object) {
-    return this.http.post<any>('http://api.goomlla.com:3006/user', user).pipe(
+    return this.http.post<any>('http://localhost:3006/user', user).pipe(
       map((res: any) => {
         return res;
       })
@@ -59,7 +55,7 @@ export class ApiService {
 
   getAllUsers() {
     return this.http
-      .get<any>('http://api.goomlla.com:3006/user/all', {
+      .get<any>('http://localhost:3006/user/all', {
         headers: this.headers,
       })
       .pipe(

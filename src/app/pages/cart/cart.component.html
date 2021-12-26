@@ -8,13 +8,15 @@
               <th>name</th>
               <th>description</th>
               <th>price</th>
+              <th>Quantity</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let item of products; let i = index">
-              <td>{{ item.product.name | uppercase }}</td>
+              <td>{{ item.product.name }}</td>
               <td>{{ item.product.description }}</td>
               <td>${{ item.product.price }}</td>
+              <td>{{ item.quantity }}</td>
             </tr>
           </tbody>
         </table>

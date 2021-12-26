@@ -1,12 +1,16 @@
 <div class="container">
-    <ng-container *ngFor="let item of productList">
-        <mat-card class="card">
-            <img src="http://api.goomlla.com:3006/public/{{item.image}}" alt="">
-            <h3><a routerLink="/product/{{item._id}}">{{item.name}}</a></h3>
-            <p class="price"><strong>${{item.price}}</strong></p>
-            <button mat-raised-button color="primary" (click)="addtocart(item._id)">
-                <mat-icon>add_shopping_cart</mat-icon>
-            </button>
-        </mat-card>
-    </ng-container>
+  <ng-container *ngFor="let item of productList">
+    <mat-card class="card">
+      <img src="http://localhost:3006/public/{{ item.image }}" alt="" />
+      <h3>
+        <a routerLink="/product/{{ item._id }}">{{ item.name | uppercase }}</a>
+      </h3>
+      <p class="price">
+        <strong>${{ item.price }}</strong>
+      </p>
+      <button mat-raised-button color="primary" (click)="addtocart(item._id)">
+        <mat-icon>add_shopping_cart</mat-icon>
+      </button>
+    </mat-card>
+  </ng-container>
 </div>
