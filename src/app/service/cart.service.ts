@@ -33,15 +33,7 @@ export class CartService {
     return this.http
       .post<any>('http://api.goomlla.com:3006/cart', data, {
         headers: this.headers
-      })
-      .pipe(
-        map((res: any) => {
-          console.log(res);
-          return res;
-        })
-      ).subscribe(res => {
-        console.log(res);
-      })
+      }).subscribe();
   }
   // getTotalPrice() :number{
   //   let totalPrice =0;

@@ -23,7 +23,6 @@ export class HomeComponent implements OnInit {
   }
 
   addtocart(id:string){
-
     if(localStorage.getItem('token')){
       this.cartService.addtoCart({
         product: id
