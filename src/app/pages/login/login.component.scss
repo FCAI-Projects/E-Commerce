@@ -1,0 +1,15 @@
+.login-card {
+  text-align: center;
+  margin: 100px auto;
+  width: 50vh;
+  height: 350px;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+
+  .dont-have-account:hover {
+    cursor: pointer;
+  }
+}

@@ -14,6 +14,14 @@ import { ProductComponent } from './pages/product/product.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import { HomeComponent } from './pages/home/home.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatInputModule} from "@angular/material/input";
+import {FormsModule} from "@angular/forms";
+import { RegisterComponent } from './pages/register/register.component';
+import {MatSelectModule} from "@angular/material/select";
+import {MatRadioModule} from "@angular/material/radio";
+import {MatGridListModule} from "@angular/material/grid-list";
 
 @NgModule({
   declarations: [
@@ -22,9 +30,11 @@ import { HomeComponent } from './pages/home/home.component';
     LoginComponent,
     CartComponent,
     ProductComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -32,7 +42,13 @@ import { HomeComponent } from './pages/home/home.component';
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    MatFormFieldModule,
+    MatProgressSpinnerModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
