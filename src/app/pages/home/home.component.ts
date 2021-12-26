@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/service/cart.service';
 import { ApiService } from '../../service/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,8 +11,8 @@ import { ApiService } from '../../service/api.service';
 export class HomeComponent implements OnInit {
 
   public productList : any;
-
-  constructor (private api : ApiService) {
+  
+  constructor (private api : ApiService, private cartService : CartService, private router: Router) {
     this.api.getProduct()
     .subscribe(res => {
       this.productList = res;
@@ -18,6 +20,17 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  addtocart(id:string){
+    if(localStorage.getItem('token')){
+      this.cartService.addtoCart({
+        product: id
+      })
+    }
+    else {
+      this.router.navigate(['/login']);
+    }
   }
 
 }
