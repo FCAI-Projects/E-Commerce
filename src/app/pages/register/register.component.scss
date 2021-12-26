@@ -1,0 +1,24 @@
+
+
+.width-50{width: 49%;}
+.ml-1{margin-left: 1%;}
+.ml-2{margin-left: 2%;}
+.width-100{width: 100%;}
+.width-25{width: 25%;}
+
+
+.login-card {
+  text-align: center;
+  margin: 40px auto;
+  width: 100vh;
+
+  .mat-card-header {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .mat-radio-button {
+    margin: 10px;
+  }
+}
