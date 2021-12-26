@@ -8,6 +8,11 @@
     padding: 20px 0;
   }
 
+  .responsive-table {
+    width: 100%;
+    overflow-x: auto;
+  }
+
   table {
     width: 100%;
     table-layout: fixed;

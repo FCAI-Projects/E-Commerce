@@ -1,1 +1,14 @@
-<p>product works!</p>
+<div class="container">
+  <mat-card class="card">
+    <img src="http://api.goomlla.com:3006/public/{{ item.image }}" alt="" />
+    <div class="card-body">
+      <h5>Product Name: {{ item.name }}</h5>
+      <p>Product Description: {{ item.description }}</p>
+      <p>Product price: ${{ item.price }}</p>
+      <p>Product stock: {{ item.stock }}</p>
+      <button mat-raised-button color="primary" (click)="addtocart()">
+        Add to cart
+      </button>
+    </div>
+  </mat-card>
+</div>
