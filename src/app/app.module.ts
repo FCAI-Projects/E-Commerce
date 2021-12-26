@@ -12,16 +12,18 @@ import { LoginComponent } from './pages/login/login.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { ProductComponent } from './pages/product/product.component';
 import { HttpClientModule } from '@angular/common/http';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { HomeComponent } from './pages/home/home.component';
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
-import {MatInputModule} from "@angular/material/input";
-import {FormsModule} from "@angular/forms";
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './pages/register/register.component';
-import {MatSelectModule} from "@angular/material/select";
-import {MatRadioModule} from "@angular/material/radio";
-import {MatGridListModule} from "@angular/material/grid-list";
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { AdminComponent } from './pages/admin/admin.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import {MatGridListModule} from "@angular/material/grid-list";
     CartComponent,
     ProductComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    AdminComponent,
   ],
   imports: [
     FormsModule,
@@ -48,9 +51,10 @@ import {MatGridListModule} from "@angular/material/grid-list";
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
-    MatGridListModule
+    MatGridListModule,
+    MatTableModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -4,23 +4,44 @@
   </mat-card-header>
   <mat-card-content>
     <form class="login-form">
-      <table  cellspacing="0">
+      <table cellspacing="0">
         <tr>
           <td>
             <mat-form-field>
-              <input matInput placeholder="Email" [(ngModel)]="username" name="email" required>
+              <input
+                matInput
+                placeholder="Email"
+                [(ngModel)]="email"
+                name="email"
+                required
+              />
             </mat-form-field>
           </td>
         </tr>
         <tr>
-          <td><mat-form-field>
-            <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password" required>
-          </mat-form-field></td>
-        </tr></table>
+          <td>
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Password"
+                [(ngModel)]="password"
+                type="password"
+                name="password"
+                required
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
     </form>
-    <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+    <mat-spinner
+      [style.display]="showSpinner ? 'block' : 'none'"
+      class="spinner-center"
+    ></mat-spinner>
   </mat-card-content>
-  <mat-label class="dont-have-account" routerLink="/register">Don't have account?</mat-label>
+  <mat-label class="dont-have-account" routerLink="/register"
+    >Don't have account?</mat-label
+  >
   <mat-card-actions>
     <button mat-raised-button (click)="login()" color="primary">Login</button>
   </mat-card-actions>
