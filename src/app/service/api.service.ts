@@ -31,6 +31,16 @@ export class ApiService {
       );
   }
 
+  getProductById(id:string) {
+    return this.http
+      .get<any>('http://api.goomlla.com:3006/product/'+id)
+      .pipe(
+        map((res: any) => {
+          return res;
+        })
+      );
+  }
+  
   loginUser(user: Object) {
     return this.http
       .post<any>('http://api.goomlla.com:3006/user/login', user)
@@ -42,7 +52,9 @@ export class ApiService {
   }
 
   registerUser(user: Object) {
-    return this.http.post<any>('http://api.goomlla.com:3006/user', user).pipe(
+    return this.http
+    .post<any>('http://api.goomlla.com:3006/user', user)
+    .pipe(
       map((res: any) => {
         return res;
       })

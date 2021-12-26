@@ -1,51 +1,53 @@
-<ng-container *ngIf="products.length!=0">
-<div class="card-table">
-  <div class="cart-product">
-    <table class="tabel tabel-responsive">
-      <thead>
-        <tr>
-          <th>id</th>
-          <th>name</th>
-          <th>img</th>
-          <th>description</th>
-          <th>price</th>
-          <th>action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of products; let i = index ">
-          <td>{{item.id}}</td>
-          <td>{{item.name}}</td>
-          <td><img style="width: 120px;" src="{{item.imgae}}"></td>
-          <td>{{item.description}}</td>
-          <td>{{item.price}}</td>
-          <td>
-            <button (click)="removeCartItem(item)" mat-fab color="primary" aria-label="Example icon button with a delete icon">
-              <mat-icon>delete</mat-icon>
-            </button>
+<div *ngIf="this.loading == false">
+  <ng-container >
+    <div class="card-table">
+      <div class="cart-product">
+        <table class="tabel tabel-responsive">
+          <thead>
+          <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>img</th>
+            <th>description</th>
+            <th>price</th>
+            <th>action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of products; let i = index ">
+            <td>{{item.product._id}}</td>
+            <td>{{item.product.name}}</td>
+            <td><img style="width: 120px;" src="{{item.imgae}}"></td>
+            <td>{{item.product.description}}</td>
+            <td>{{item.product.price}}</td>
+            <td>
+              <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+                <mat-icon>delete</mat-icon>
+              </button>
 
-          </td>
-        </tr>
-      </tbody>
-    </table>
+            </td>
+          </tr>
+          </tbody>
+        </table>
 
-  </div>
+      </div>
+    </div>
+  </ng-container>
+
+
+
+
+  <ng-container>
+    <div class="container" *ngIf="products.length == 0">
+      <div class="card">
+        <h5 class="card-title">My Cart</h5>
+      </div>
+      <div class="center">
+        <h4>Your cart is empty! </h4>
+        <h4>Add itmes now</h4>
+        <button mat-raised-button color="primary">Shop Now</button>
+      </div>
+    </div>
+  </ng-container>
 </div>
-</ng-container>
-
-
-
-
-<ng-container>
-  <div class="container" *ngIf="products.length == 0">
-    <div class="card">
-      <h5 class="card-title">My Cart</h5>
-    </div>
-    <div class="center">
-      <h4>Your cart is empty! </h4>
-      <h4>Add itmes now</h4>
-      <button mat-raised-button color="primary">Shop Now</button>
-    </div>
-  </div>
-</ng-container>
 
