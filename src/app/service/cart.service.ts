@@ -19,7 +19,7 @@ export class CartService {
   public productList = new BehaviorSubject<any> ([]);
 
   constructor(private http: HttpClient) { }
-  
+
   // getProducts(){
   //   return this.productList.asObservable();
   // }
@@ -29,15 +29,19 @@ export class CartService {
   // }
 
   addtoCart(data: object){
+
     return this.http
       .post<any>('http://api.goomlla.com:3006/cart', data, {
         headers: this.headers
       })
       .pipe(
         map((res: any) => {
+          console.log(res);
           return res;
         })
-      );
+      ).subscribe(res => {
+        console.log(res);
+      })
   }
   // getTotalPrice() :number{
   //   let totalPrice =0;
@@ -64,7 +68,6 @@ export class CartService {
     })
     .pipe(map((res:any)=>{
       return res;
-      console.log(res)
     }))
   }
 }

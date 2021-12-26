@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   public productList : any;
-  
+
   constructor (private api : ApiService, private cartService : CartService, private router: Router) {
     this.api.getProduct()
     .subscribe(res => {
@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
   }
 
   addtocart(id:string){
+
     if(localStorage.getItem('token')){
       this.cartService.addtoCart({
         product: id
