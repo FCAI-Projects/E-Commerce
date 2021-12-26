@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/service/cart.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-cart',
@@ -11,7 +12,11 @@ export class CartComponent implements OnInit {
   public products: any;
   public totalPrice !: number ;
   public loading = true;
-  constructor(private cartService: CartService) { }
+  constructor(private router: Router, private cartService: CartService) {
+    if (!localStorage.getItem('token')) {
+      this.router.navigate(['/login']);
+    }
+  }
 
   ngOnInit(): void {
     this.cartService.getCartItems()

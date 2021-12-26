@@ -24,6 +24,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { AdminComponent } from './pages/admin/admin.component';
 import { MatTableModule } from '@angular/material/table';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { MatTableModule } from '@angular/material/table';
     MatRadioModule,
     MatGridListModule,
     MatTableModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],
