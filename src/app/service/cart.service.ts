@@ -1,7 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',
@@ -16,7 +15,6 @@ export class CartService {
   });
 
   public cartItemList: any = [];
-  public productList = new BehaviorSubject<any>([]);
 
   constructor(private http: HttpClient) {}
 

@@ -1,15 +1,9 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 .container {
-  margin: 25px 0;
-  margin-left: 2%;
+  margin: 25px auto;
+  max-width: 1200px;
   display: grid;
   grid-gap: 4% 2%;
-  grid-template-columns: 23% 23% 23% 23%;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   text-align: center;
   .card {
     background-color: #f1f1f1;
@@ -46,9 +40,6 @@
 
 @media (max-width: 768px) {
   .container {
-    margin-left: 10%;
-    grid-template-columns: 90%;
-    grid-gap: 2% 0%;
     h3 {
       height: unset !important;
       margin-top: 10px;
